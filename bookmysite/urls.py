@@ -17,7 +17,7 @@ Myurls
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from bookmysite.views import hello, home_page_view, current_datetime, hours_head
+from bookmysite.views import *
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls) ),
@@ -25,4 +25,7 @@ urlpatterns = [
     url(r'^hello/$', hello ),
     url(r'^datetime/$', current_datetime ),
     url(r'^datetime/plus/(?P<offset>(\d{1,2}))/$', hours_head),
+    url(r'^page1/$', page_one),
+    url(r'^page2/$', page_two),
+    url(r'^page3/$', page_three),
 ]

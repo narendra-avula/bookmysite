@@ -1,2 +1,7 @@
 .idea
 .pyc
+__pycache__/
+bookmysite/__init__.pyc
+bookmysite/__pycache__/
+bookmysite/settings.pyc
+
