@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Home Page</title>
+    {% endblock title %}
+</head>
+<body>
+    <div class="header" style="background-color: antiquewhite; height: 150px">
+        <h1>Welcome to Header</h1>
+    </div>
+
+    <div>
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+    <div class="" style="height: 150px; background-color: aqua">
+        <h1>Welocome to Footer</h1>
+    </div>
+</body>
+</html>
