@@ -1,0 +1,54 @@
+body {
+    background-color: #ff6e45;
+}
+.top-bar-section > ul {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+}
+.top-bar-section > ul > li {
+    float: none;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    flex: 1;
+}
+.top-bar-section > ul > li > a {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    overflow: hidden;
+}
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background-color: #fafafa!important;
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background-color: #fafafa!important;
+}
+.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
+    background: #fafafa!important;
+}
+.top-bar-section ul li a, .top-bar-section ul li a:hover{
+    color: #000000!important;
+}
+/* Slider */
+.owl-theme .owl-nav [class*=owl-] {
+    color: #fff;
+    font-size: 14px;
+    margin: 5px;
+
+}
+/* End Slider */
+
+
+@media only screen and (min-width: 40.0625em) {
+    .top-bar {
+        background: #fafafa!important;
+        overflow: visible;
+    }
+    .top-bar-section li:not(.has-for)
+}
+
+

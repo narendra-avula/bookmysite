@@ -1,15 +1,41 @@
 {% extends 'baseTemplate.html' %}
+{% load staticfiles %}
 {% block title %}
     <title>Home Page</title>
 {% endblock title %}
 
 {% block content %}
-    <div>
+    <div class="">
+        <div class="owl-carousel homepage-slider">
+            <div><img src="https://placehold.it/2000x750&amp;text=1st"></div>
+            <div><img src="https://placehold.it/2000x750&amp;text=2nd"></div>
+            <div><img src="https://placehold.it/2000x750&amp;text=3rd"></div>
+            <div><img src="https://placehold.it/2000x750&amp;text=4th"></div>
+            <div><img src="https://placehold.it/2000x750&amp;text=5th"></div>
+            <div><img src="https://placehold.it/2000x750&amp;text=6th"></div>
+            <div><img src="https://placehold.it/2000x750&amp;text=7th"></div>
+        </div>
+    </div>
+
+    <div class="row">
         <h1>Home page</h1>
+        <div>
+            <ul>
+                <li>
+                    <a href="/page1">Page Link 1</a>
+                </li>
+                <li>
+                    <a href="/page2">Page Link 2</a>
+                </li>
+                <li>
+                    <a href="/page3">Page Link 3</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div>
-        <a href="/page1">Page 1</a>
-        <a href="/page2">Page 2</a>
-        <a href="/page3">Page 3</a>
-    </div>
+
 {% endblock content %}
+
+{% block javascript %}
+    <script src="{% static 'js/homepage/slider.js' %}"></script>
+{% endblock javascript %}
