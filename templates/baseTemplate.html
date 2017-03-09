@@ -1,24 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load staticfiles %}
+<html class="no-js" lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     {% block title %}
         <title>Home Page</title>
     {% endblock title %}
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/foundation.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+
+    <!-- End Style Sheets -->
+
+    <!-- JS Files -->
+    <script src="{% static 'js/vendor/modernizr.js' %}"></script>
+
+    <!-- End JS Files -->
+
 </head>
 <body>
-    <div class="header" style="background-color: antiquewhite; height: 150px">
-        <h1>Welcome to Header</h1>
-    </div>
 
-    <div>
-        {% block content %}
+    {% block body %}
+        {% block header %}
+            <div class="row">
 
-        {% endblock content %}
-    </div>
+            </div>
+            <div style="border-bottom: 1px solid #e31e24;background-color: #fafafa;width:100%">
+                <div class="row">
+                    <nav class="top-bar" data-topbar>
+                        <ul class="title-area hidden-for-medium-up">
+                            <li class="name">
+                                <h1><a href="#">Book MySite</a></h1>
+                            </li>
+                            <li class="toggle-topbar menu-icon"><a href="#">Menu</a>
+                            </li>
+                        </ul>
+                        <section class="top-bar-section">
+                            <!-- Right Nav Section -->
+                            <ul class="full-width">
+                                <li><a href="/">Home</a>
+                                <li><a href="#">Link 1</a>
 
-    <div class="" style="height: 150px; background-color: aqua">
-        <h1>Welocome to Footer</h1>
-    </div>
+                                </li>
+                                <li class="has-dropdown"> <a href="#">Long Link 2</a>
+
+                                    <ul class="dropdown">
+                                        <li><a href="#">First link in dropdown</a>
+                                        <li><a href="#">Second link in dropdown</a>
+                                        <li><a href="#">Third link in dropdown</a>
+                                        <li><a href="#">Fourth link in dropdown</a>
+                                        <li><a href="#">Fifth link in dropdown</a>
+
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Link 3</a>
+
+                                </li>
+                                <li><a href="#">Link 4</a>
+
+                                </li>
+                                <li><a href="#">Even Longer Link 5</a>
+
+                                </li>
+                                <li><a href="#">Link 6</a>
+
+                                </li>
+                            </ul>
+                        </section>
+                    </nav>
+                </div>
+            </div>
+        {% endblock header%}
+
+
+        <div class="off-canvas-wrap">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+
+        <!-- Footer -->
+        {% include 'footer.html' %}
+        <!-- End Footer -->
+
+
+        <!-- JS Files -->
+        <script src="{% static 'js/vendor/jquery.js' %}"></script>
+        <script src="{% static 'js/foundation.min.js' %}"></script>
+        <script src="{% static 'js/owlcarousel/owl.carousel.js' %}"></script>
+
+        {% block javascript %}
+
+        {% endblock javascript %}
+
+        <script>
+            $(document).foundation();
+            $(document).ready(function(){
+                $(".owl-carousel").owlCarousel();
+            });
+        </script>
+
+        <!-- End JS Files -->
+    {% endblock body %}
+
 </body>
 </html>
