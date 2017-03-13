@@ -37,5 +37,10 @@
 {% endblock content %}
 
 {% block javascript %}
+    <script>
+        if (window.screen.width <= 640) {
+            window.location = 'http://{{ hostName }}/mobile/';
+        }
+    </script>
     <script src="{% static 'js/homepage/slider.js' %}"></script>
 {% endblock javascript %}

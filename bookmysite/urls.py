@@ -22,6 +22,7 @@ from bookmysite.views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls) ),
     url(r'^$', home_page_view ),
+    url(r'^mobile/$', home_page_mobile_view ),
     url(r'^hello/$', hello ),
     url(r'^datetime/$', current_datetime ),
     url(r'^datetime/plus/(?P<offset>(\d{1,2}))/$', hours_head),

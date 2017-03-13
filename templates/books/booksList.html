@@ -1,0 +1,32 @@
+{% extends 'baseTemplate.html' %}
+{% block title %}
+    <title>Books List</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="row" style="padding: 25px">
+        <h4> Books List </h4>
+    </div>
+
+    <div class="row">
+        <table class="small-12 columns">
+            <tr>
+                <th>SNo</th>
+                <th>Title</th>
+                <th>Authors</th>
+                <th>Publisher</th>
+                <th>Publication Date</th>
+            </tr>
+            {% for book in books %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.get_authors }}</td>
+                    <td>{{ book.publisher }}</td>
+                    <td>{{ book.publication_date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock content %}

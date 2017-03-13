@@ -11,7 +11,12 @@ from django.template import Template, Context
 #     return HttpResponse("welcome to homepage")
 
 def home_page_view(request):
-    return render(request, 'homepage.html')
+    host_name = request.META['HTTP_HOST']
+    return render(request, 'homepage.html', {'hostName' : host_name})
+
+def home_page_mobile_view(request):
+    host_name = request.META['HTTP_HOST']
+    return render(request, 'homepageMobile.html', {'hostName' : host_name})
 
 
 def hello(request):
