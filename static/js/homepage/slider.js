@@ -18,7 +18,7 @@ $(document).ready(function(){
         margin: 20,
         lazyLoad: true,
         autoplayTimeout: 2500,
-        autoplayHoverPause: true
+        autoplayHoverPause: false
     });
 
 });

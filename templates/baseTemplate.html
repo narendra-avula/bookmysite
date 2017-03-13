@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/foundation-icons/foundation-icons.css' %}">
 
 
     <!-- End Style Sheets -->
@@ -23,6 +24,8 @@
     <script src="{% static 'js/vendor/modernizr.js' %}"></script>
 
     <!-- End JS Files -->
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
 
 </head>
 <body>
@@ -88,7 +91,10 @@
         </div>
 
         <!-- Footer -->
-        {% include 'footer.html' %}
+        <div style="border-top: 1px solid #e31e24">
+            {% include 'footer.html' %}
+        </div>
+
         <!-- End Footer -->
 
 
