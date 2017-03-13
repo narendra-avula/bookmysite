@@ -28,4 +28,6 @@ urlpatterns = [
     url(r'^page1/$', page_one),
     url(r'^page2/$', page_two),
     url(r'^page3/$', page_three),
+    url(r'^meta-data/$', display_meta),
+    url(r'^books/', include('books.urls'))
 ]
