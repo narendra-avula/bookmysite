@@ -4,29 +4,55 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="row" style="padding: 25px">
-        <h4> Books List </h4>
+    <style>
+        li
+        {
+            display: inline-block;
+            zoom: 1;
+            *display: inline;
+        }
+        #searchBook {
+            height: 38px;
+        }
+    </style>
+
+    <div class="row" style="padding: 25px; padding-bottom: 0">
+        <div class="small-8 columns">
+            <h4> Books List </h4>
+        </div>
+        <div class="small-4 columns">
+            <form action="/books/search/" method="get">
+                <ul>
+                    <li><input type="text" name="query"></li>
+                    <li><input type="submit" value="Search" id="searchBook"></li>
+                </ul>
+            </form>
+        </div>
     </div>
 
     <div class="row">
-        <table class="small-12 columns">
-            <tr>
-                <th>SNo</th>
-                <th>Title</th>
-                <th>Authors</th>
-                <th>Publisher</th>
-                <th>Publication Date</th>
-            </tr>
-            {% for book in books %}
+        {% if books %}
+            <table class="small-12 columns">
                 <tr>
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{ book.title }}</td>
-                    <td>{{ book.get_authors }}</td>
-                    <td>{{ book.publisher }}</td>
-                    <td>{{ book.publication_date }}</td>
+                    <th>SNo</th>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Publisher</th>
+                    <th>Publication Date</th>
                 </tr>
-            {% endfor %}
-        </table>
+                {% for book in books %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.get_authors }}</td>
+                        <td>{{ book.publisher }}</td>
+                        <td>{{ book.publication_date }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Thers is no Books</p>
+        {% endif %}
     </div>
 
 {% endblock content %}

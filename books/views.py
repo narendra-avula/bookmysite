@@ -12,6 +12,16 @@ def books_list(request):
     context  =  {'books': books}
     return render(request, 'books/booksList.html', context)
 
+
+def search(request):
+    if request.method == 'GET':
+        book_name = request.GET['query']
+        if book_name:
+            books = Book.objects.filter(title__icontains=book_name)
+            context = {'books': books}
+            return render(request, 'books/booksList.html', context)
+
+
 def search_form(request):
     return render(request, 'books/search_form.html')
 
@@ -25,11 +35,11 @@ def search_form(request):
 #         return HttpResponse(message)
 
 
-def search(request):
-    if 'query' in request.GET and request.GET['query']:
-        book_name = request.GET['query']
-        books = Book.objects.filter(title__icontains=book_name)
-        context = {'books': books, 'bookName': book_name}
-        return render(request, 'books/search_results.html', context)
-    else:
-        return HttpResponse('Please submit a search term')
+# def search(request):
+#     if 'query' in request.GET and request.GET['query']:
+#         book_name = request.GET['query']
+#         books = Book.objects.filter(title__icontains=book_name)
+#         context = {'books': books, 'bookName': book_name}
+#         return render(request, 'books/search_results.html', context)
+#     else:
+#         return HttpResponse('Please submit a search term')
