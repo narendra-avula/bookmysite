@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Search</title>
-</head>
-<body>
-<form action="/books/search/" method="get">
-    <input type="text" name="query">
-    <input type="submit" value="Search">
-</form>
-</body>
-</html>
+{% extends 'baseTemplate.html' %}
+{% block title %}
+    <title>Search Form</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="row" style="padding: 25px">
+        <form action="/books/search/" method="get">
+            <input type="text" name="q">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+{% endblock content %}

@@ -31,4 +31,4 @@ class Book(models.Model):
         return self.title
 
     def get_authors(self):
-        return ",".join([str(author) for author in self.authors.all()])
+        return ", ".join([str(author) for author in self.authors.all()])

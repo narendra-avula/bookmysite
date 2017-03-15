@@ -1,0 +1,23 @@
+{% extends 'baseTemplate.html' %}
+{% load staticfiles %}
+{% block title %}
+    <title>Home Page</title>
+{% endblock title %}
+
+{% block content %}
+
+    <div class="row">
+        <h1>Mobile Home Page</h1>
+
+    </div>
+
+{% endblock content %}
+
+{% block javascript %}
+    <script>
+        if (window.screen.width > 640) {
+            window.location = 'http://{{ hostName }}/';
+        }
+    </script>
+    <script src="{% static 'js/homepage/slider.js' %}"></script>
+{% endblock javascript %}
